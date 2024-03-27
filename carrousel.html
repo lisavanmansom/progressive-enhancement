@@ -6,36 +6,159 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+			section {
+				display: flex;
+				flex-direction: column;
 
-			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
+
+			div:nth-of-type(1) {
+				display: flex;
+				flex-wrap: nowrap;
+				overflow: auto;
+				scroll-snap-type: x mandatory;
+				margin: 2em 0;
+
+			
+			article {
+				align-items: center;
+				background-color: var(--purple);
+				display: flex;
+				height: 40em;
+				justify-content: center;
+				scroll-snap-align: center;
+				scrollbar-width: none;
+				text-align: center;
+
+				flex: 40em 0 0;
+				flex-basis: 70vw;
+			}
+
+			article:nth-last-of-type(2n) {
+				background-color: var(--yellow);
+			}
+			article:nth-last-of-type(3n + 1) {
+				background-color: var(--green);
+			}
+
+			blockquote {
+				font-size: 3em;
+				font-weight: bold;
+				font-style: italic;
+
+				padding: 2em;
+			}
+		}
+
+		 	div:nth-of-type(2) {
+				display: flex;
+				justify-content: space-between;
+				margin: -6.5em 1em 0 1em;
+				z-index: 999;
+			
+
+		  	button  {  appearance: none; background: none; border: none; cursor: pointer; 
+           		color: inherit; font: inherit; padding: 0; outline: inherit;}
+
+		   	button {
+				background-color: var(--blue);
+				border-radius: 12px;
+				border: .15em solid var(--green);
+				color: var(--green);
+				font-size: 1.2em;
+				padding: .5em 1em;
+		   	}
+			}
+	}
+
+			section::-webkit-scrollbar {
+       			display: none;
+     	 }
+
+		 	details {
+				margin: 3em 0 0 0;
+			}
+
 		</style>
 		<script type="module">
+
+			const prevBTN = document.querySelector('.prevBTN')
+			const nextBTN = document.querySelector('.nextBTN')
+			const carrousel = document.querySelector('.carrousel-container')
+
+			prevBTN.addEventListener('click', function () {
+				carrousel.scrollBy({
+					left: -carrousel.offsetWidth,
+					behavior: 'smooth'
+				})
+			});
+
+			nextBTN.addEventListener('click', function () {
+				carrousel.scrollBy({
+					left: carrousel.offsetWidth,
+					behavior: 'smooth'
+				})
+			});
+
+			// prevBTN.addEventListener('click', prevSlide);
+			// nextBTN.addEventListener('click', nextSlide);
+
+			// function nextSlide() {
+  			// currentIndex = (currentIndex + 1) % carouselItems.length;
+  			// showSlide(currentIndex);
+			// }
+
+			// function prevSlide() {
+  			// currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  			// showSlide(currentIndex);
+			// }
+
+			// showSlide(currentIndex);
+
+			console.log("test")
+
 			/* Schrijf hier eventueel je client-side JavaScript */
 		</script>
 	</head>
 	<body>
 		<h1>Carrousel</h1>
 
-		<!-- Content
+		<section>
+			<div class="carrousel-container">
+			<article class="carrousel-item">
+			<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
+			</article>
 
-		“Websites leren bouwen, én praktijkervaring opdoen?”
+			<article class="carrousel-item">
+			<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
+			</article>
 
-		“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
+			<article class="carrousel-item">
+			<blockquote>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</blockquote>
+			</article>
 
-		“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
+			<article class="carrousel-item">
+			<blockquote>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</blockquote>
+			</article>
 
-		“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
+			<article class="carrousel-item">
+			<blockquote>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</blockquote>
+			</article>
 
-		“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
+			<article class="carrousel-item">
+			<blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote>
+			</article>
+		</div>
 
-		“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
+		<div>
+		<button class="prevBTN">Vorige</button>
+		<button class="nextBTN">Volgende</button>
+		</div>
 
-		-->
+		</section>
 
-		<details open>
+		<details>
 			<summary>Demo video</summary>
-			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted autoplay loop>
+			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted loop>
 				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
 			</video>
 		</details>
