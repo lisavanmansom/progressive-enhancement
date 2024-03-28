@@ -6,6 +6,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
+			body {
+  				background-image: url("assets/joshua-sukoff-0R-FfeOUTSw-unsplash.jpg");
+				background-size: cover;
+  				background-position: center;
+  				background-repeat: no-repeat;
+  				height: 50em;
+			}
+
+			h1 {
+				color: red;
+				-webkit-text-stroke-color: yellow;
+				-webkit-text-stroke-width: 1.5px;
+				font-size: 3em;
+			}
 			section {
 				display: flex;
 				flex-direction: column;
@@ -19,7 +33,9 @@
 			
 			article {
 				align-items: center;
-				background-color: var(--purple);
+				background-color: red;
+				border-radius: 12px;
+				opacity: 0.5;
 				display: flex;
 				height: 40em;
 				justify-content: center;
@@ -29,13 +45,16 @@
 
 				flex: 40em 0 0;
 				flex-basis: 70vw;
+				color: blue;
 			}
 
 			article:nth-last-of-type(2n) {
 				background-color: var(--yellow);
+				color: red;
 			}
 			article:nth-last-of-type(3n + 1) {
-				background-color: var(--green);
+				background-color: blue;
+				color: yellow;
 			}
 
 			blockquote {
@@ -44,6 +63,7 @@
 				font-style: italic;
 
 				padding: 2em;
+				opacity: 1;
 			}
 		}
 
@@ -58,10 +78,10 @@
            		color: inherit; font: inherit; padding: 0; outline: inherit;}
 
 		   	button {
-				background-color: var(--blue);
+				background-color: red;
 				border-radius: 12px;
-				border: .15em solid var(--green);
-				color: var(--green);
+				border: .15em solid yellow;
+				color: yellow;
 				font-size: 1.2em;
 				padding: .5em 1em;
 		   	}
@@ -74,6 +94,19 @@
 
 		 	details {
 				margin: 3em 0 0 0;
+			}
+			.gr {
+				position: absolute; top: 0; bottom: 0; right: 0; left: 0;
+				opacity: .05;
+				animation: background 1s infinite linear;
+				z-index: 1;
+			}
+
+			@keyframes background {
+ 				0%   { background: red }
+  				33%  { background: blue }
+  				66% { background: yellow }
+  				100%   { background: orangered }
 			}
 
 		</style>
@@ -145,5 +178,6 @@
 				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
 			</video>
 		</details>
+		<div class="gr"></div>
 	</body>
 </html>
