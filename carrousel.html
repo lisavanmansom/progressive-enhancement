@@ -10,14 +10,12 @@
 				display: flex;
 				flex-direction: column;
 
-
 			div:nth-of-type(1) {
 				display: flex;
 				flex-wrap: nowrap;
 				overflow: auto;
 				scroll-snap-type: x mandatory;
 				margin: 2em 0;
-
 			
 			article {
 				align-items: center;
@@ -99,21 +97,6 @@
 				})
 			});
 
-			// prevBTN.addEventListener('click', prevSlide);
-			// nextBTN.addEventListener('click', nextSlide);
-
-			// function nextSlide() {
-  			// currentIndex = (currentIndex + 1) % carouselItems.length;
-  			// showSlide(currentIndex);
-			// }
-
-			// function prevSlide() {
-  			// currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-  			// showSlide(currentIndex);
-			// }
-
-			// showSlide(currentIndex);
-
 			console.log("test")
 
 			/* Schrijf hier eventueel je client-side JavaScript */
@@ -123,28 +106,28 @@
 		<h1>Carrousel</h1>
 
 		<section>
-			<div class="carrousel-container">
-			<article class="carrousel-item">
+			<div class="carrousel-container" role="region" aria-roledescription="carrousel">
+			<article role="group" aria-roledescription="slide1">
 			<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
 			</article>
 
-			<article class="carrousel-item">
+			<article role="group" aria-roledescription="slide2">
 			<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
 			</article>
 
-			<article class="carrousel-item">
+			<article role="group" aria-roledescription="slide3">
 			<blockquote>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</blockquote>
 			</article>
 
-			<article class="carrousel-item">
+			<article role="group" aria-roledescription="slide4">
 			<blockquote>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</blockquote>
 			</article>
 
-			<article class="carrousel-item">
+			<article role="group" aria-roledescription="slide5">
 			<blockquote>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</blockquote>
 			</article>
 
-			<article class="carrousel-item">
+			<article role="group" aria-roledescription="slide6">
 			<blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote>
 			</article>
 		</div>

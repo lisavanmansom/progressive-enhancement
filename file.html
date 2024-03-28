@@ -7,12 +7,59 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
+			section {
+				display: flex;
+				flex-direction: row;
+			}
 
+			.file {
+  				opacity: 0;
+  				width: 0.1px;
+  				height: 0.1px;
+  				position: absolute;
+			}
+
+			form {
+				width: 40em;
+				height: 20em;
+				background-color: var(--green);
+				border-radius: 12px;
+				border: .25em solid var(--blue);
+
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				label {
+					margin: 9em auto;
+				}
+			}
+
+			button {
+				margin: 20em 0 0 0;
+				width: 10em;
+			}
+
+			details{
+				margin: 5em 0 0 0;
+			}
 			/* Hint: Denk niet te ingewikkeld */
 		</style>
 		<script type="module">
+
+		function showMyImage(fileInput) {
+        	var file = fileInput.files[0];
+        	var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var imagePreview = document.getElementById('preview');
+            imagePreview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+	}
+
 			/* Schrijf hier eventueel je client-side JavaScript */
-			
 			/* Hint: Met een paar regels kom je al een heel eind */
 
 			/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
@@ -21,19 +68,25 @@
 	<body>
 		<h1>File upload met preview</h1>
 
+		<section>
+
 		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
 			 Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
-		<form method="post">
+			 <form method="post" enctype="multipart/form-data">
+    			<input type="file" class="file" accept="image/*" onchange="showMyImage(this)" />
+    			<label for="file">Selecteer je afbeelding</label>
+    			<img id="preview" src="" alt=""/>
 
 			<!-- Hint: Denk niet te ingewikkeld -->
 
 			<button type="submit" class="fdnd-button">Uploaden</button>
 
 		</form>
+	</section>
 
-		<details open>
+		<details>
 			<summary>Demo video</summary>
-			<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
+			<video src="assets/file.mp4" width="1496" height="496" controls muted loop>
 				<a href="assets/file.mp4">assets/file.mp4</a>
 			</video>
 		</details>
