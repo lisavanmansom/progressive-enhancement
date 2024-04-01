@@ -9,7 +9,7 @@
 			/* Schrijf hier gewoon je CSS voor dit component */
 			body {
 				  background-image: url("assets/aniket-deole-T-tOgjWZ0fQ-unsplash.jpg");
-					background-size: cover;
+				  background-size: cover;
 				  background-position: center;
 				  background-repeat: no-repeat;
 				  height: 50em;
@@ -20,11 +20,127 @@
 				-webkit-text-stroke-width: 1.5px;
 				font-size: 3em;
 			}
+
+			section {
+				display: flex;
+				flex-direction: column;
+
+				div {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					background-color: red;
+					height: auto;
+					gap: 2em;					
+					width: 90dvw;
+					border: 5px solid yellow;
+
+					h2 {
+						color:	yellow;
+						padding-left: 1em;
+					}
+				}
+
+				article {
+					border: 5px solid yellow;
+					width: 90dvw;
+					height: 30em;
+
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+
+					h3 {
+						color: red;
+						-webkit-text-stroke-color: yellow;
+						-webkit-text-stroke-width: 1.5px;
+						font-size: 3em;
+						margin: 1em 0 0 1em;
+						display: flex;
+
+					}
+				}
+				article:nth-of-type(1) {
+					background-image: url("assets/claudel-rheault-ZVbv1akA-l4-unsplash.jpg");
+				}
+
+				article:nth-of-type(2) {
+					background-image: url("assets/ales-krivec-4miBe6zg5r0-unsplash.jpg");
+				}
+
+				article:nth-of-type(3) {
+					background-image: url("assets/jakob-owens-qg_bHLQuC0I-unsplash.jpg");
+				}
+
+				article:nth-of-type(4) {
+					background-image: url("assets/claudio-testa--SO3JtE3gZo-unsplash.jpg");
+				}
+
+			}
+			}
+
+			article {
+				display: none;
+			}
+
+			article:nth-of-type(1) {
+				z-index: 2;
+			}
+
+			.open {
+				display: flex;
+			}
+
+			details {
+				display: none;
 			}
 			/* Hint: kijk eens naar de :target selector */
 		</style>
 		<script type="module">
 			
+			let art1 = document.querySelector('.art-1')
+			let art2 = document.querySelector('.art-2')
+			let art3 = document.querySelector('.art-3')
+			let art4 = document.querySelector('.art-4')
+
+			let header1 = document.querySelector('.header-1')
+			let header2 = document.querySelector('.header-2')
+			let header3 = document.querySelector('.header-3')
+			let header4 = document.querySelector('.header-4')
+
+			header1.addEventListener('click', open1)
+			header2.addEventListener('click', open2)
+			header3.addEventListener('click', open3)
+			header4.addEventListener('click', open4)
+
+			function open1() {
+				art1.classList.add('open')
+				art2.classList.remove('open')
+				art3.classList.remove('open')
+				art4.classList.remove('open')
+			}
+
+			function open2() {
+				art1.classList.remove('open')
+				art2.classList.add('open')
+				art3.classList.remove('open')
+				art4.classList.remove('open')
+			}
+
+			function open3() {
+				art1.classList.remove('open')
+				art2.classList.remove('open')
+				art3.classList.add('open')
+				art4.classList.remove('open')
+			}
+
+			function open4() {
+				art1.classList.remove('open')
+				art2.classList.remove('open')
+				art3.classList.remove('open')
+				art4.classList.add('open')
+			}
+
 			/* Schrijf hier eventueel je client-side JavaScript */
 		</script>
 	</head>
@@ -32,93 +148,26 @@
 		<h1>Tabbladen</h1>
 
 		<!-- Hint: vraag je af wat tabbladen eigenlijk zijn -->
+		
+		<section><div>
+			<h2 class="header-1">Open avond</h2>
+			<h2 class="header-2">Docenten</h2>
+			<h2 class="header-3">Gedragscriteria</h2>
+			<h2 class="header-4">Sprints</h2></div>
 
-		<!-- Content
+		<article class="art-1">
+			<h3>Keep calm and carry on</h3></article>
 
-		Docenten
-		Sprints
-		Gedragscriteria
-		Open avond
+		<article class="art-2">
+			<h3>I am love, I am life</h3></article>
 
-		<ol>
-			<li>Berat Zekaj</li>
-			<li>Charley Muhren</li>
-			<li>Cyd Stumpel</li>
-			<li>Dorien Drees</li>
-			<li>Joost Faber</li>
-			<li>Justus Sturkenboom</li>
-			<li>Koop Reijnders</li>
-			<li>Krijn Hoetmer</li>
-			<li>Sanne 't Hooft</li>
-			<li>Suus ten Voorde</li>
-		</ol>
+			<article class="art-3">
+				<h3>live, laugh, love</h3>
+			</article>
 
-		<ol>
-			<li>Your Tribe</li>
-			<li>The Client</li>
-			<li>All Human</li>
-			<li>Look and Feel</li>
-			<li>Fix the Flow</li>
-			<li>The Startup</li>
-			<li>Connect Your Tribe</li>
-			<li>Server-Side Rendering</li>
-			<li>The Web is for Everyone</li>
-			<li>Performance Matters</li>
-			<li>Connecting People</li>
-			<li>Proof of Concept</li>
-			<li>Your Tribe for Life</li>
-			<li>Lose Your Head</li>
-			<li>Choices, Choices</li>
-			<li>Don't Repeat Yourself</li>
-			<li>Back to Static</li>
-			<li>Let's JAM</li>
-			<li>Free Space</li>
-			<li>Final Sprint</li>
-		</ol>
-
-		<ol>
-			<li>Methodisch handelen
-				<ol>
-					<li>Kiest binnen projecten passende fases van de development-lifecycle.</li>
-					<li>Combineert aangeboden principes en conventies op het gebied van frontend design en development.</li>
-					<li>Houdt in beginnende mate rekening met de belangen van de eindgebruiker bij het realiseren van een oplossing voor een opdrachtgever.</li>
-				</ol>
-			</li>
-			<li>Samenwerken
-				<ol>
-					<li>Werkt in teams, vraagt begeleiding waar nodig en geeft feedback aan teamleden.</li>
-					<li>Draagt verantwoording voor eigen resultaten, verwerkt ontvangen feedback en wijst teamleden op hun verantwoording.</li>
-					<li>Identificeert diversiteit binnen teams en handelt respectvol naar anderen.</li>
-				</ol>
-			</li>
-			<li>Communiceren
-				<ol>
-					<li>Luistert en vraagt door, neemt wat een ander zegt serieus.</li>
-					<li>Kan ontwerpkeuzes, eigen ideeën en producten begrijpelijk overbrengen aan belanghebbenden.</li>
-					<li>Documenteert op professionele wijze en houdt voortgang bij.</li>
-				</ol>
-			</li>
-			<li>Probleemoplossend vermogen
-				<ol>
-					<li>Analyseert een vraag, signaleert knelpunten en volgt de aangeboden oplossingsrichting.</li>
-					<li>Schetst om gedachten en processen te verkennen en abstracte begrippen over te brengen.</li>
-					<li>Bedenkt en implementeert complexere frontend code en gebruikt daarbij API's en databases.</li>
-				</ol>
-			</li>
-			<li>Lerend vermogen
-				<ol>
-					<li>Volgt aangeboden internationale ontwikkelingen in het vakgebied.</li>
-					<li>Maakt aangeboden en zelf gevonden materie eigen en gebruikt dit bij leertaken, deelt ervaring binnen de squad.</li>
-					<li>Kent eigen capaciteiten en beperkingen, vergelijkt dit met het vermogen van anderen en maakt dit bespreekbaar.</li>
-				</ol>
-			</li>
-		</ol>
-
-		<p>Open avond 16 april</p>
-		<p>Op de open dag proef je de sfeer en ontdek je hoe het is om aan de HvA te studeren. Je maakt kennis met studenten en docenten van de opleiding.</p>
-		<p>Stel je vragen over studiekeuze, studeren met een functiebeperking en toelating op het studiekeuzeplein. Heb je nog vragen over de opleiding? We staan tijdens de open dag/avond klaar om al jouw vragen te beantwoorden.</p>
-
-		-->
+		<article class="art-4">
+			<h3>Home is where the heart is</h3>
+			<section>
 
 		<details>
 			<summary>Demo video</summary>
