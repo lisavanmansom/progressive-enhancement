@@ -121,42 +121,45 @@
 
 			console.log("test")
 
-			/* Schrijf hier eventueel je client-side JavaScript */
+			nextBTN.hidden = false
+			prevBTN.hidden = false
+
+			/* Schrijf hier eventueel je cient-side JavaScript */
 		</script>
 	</head>
 	<body>
 		<h1>Carrousel</h1>
 
 		<section>
-			<div class="carrousel-container" role="region" aria-roledescription="carrousel">
-			<article role="group" aria-roledescription="slide1">
+			<div class="carrousel-container">
+			<article>
 			<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
 			</article>
 
-			<article role="group" aria-roledescription="slide2">
+			<article>
 			<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
 			</article>
 
-			<article role="group" aria-roledescription="slide3">
+			<article>
 			<blockquote>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</blockquote>
 			</article>
 
-			<article role="group" aria-roledescription="slide4">
+			<article>
 			<blockquote>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</blockquote>
 			</article>
 
-			<article role="group" aria-roledescription="slide5">
+			<article>
 			<blockquote>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</blockquote>
 			</article>
 
-			<article role="group" aria-roledescription="slide6">
+			<article>
 			<blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote>
 			</article>
 		</div>
 
 		<div>
-		<button class="prevBTN">Vorige</button>
-		<button class="nextBTN">Volgende</button>
+		<button class="prevBTN" hidden>Vorige</button>
+		<button class="nextBTN" hidden>Volgende</button>
 		</div>
 
 		</section>
